@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Hiszpański Master">
-  <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22Hiszpa%C5%84ski%20Master%22%2C%22short_name%22%3A%22EspMaster%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23020617%22%2C%22theme_color%22%3A%22%23020617%22%2C%22icons%22%3A%5B%5D%7D">
+  <link rel="manifest" href="data:application/json;charset=utf-8,eyJuYW1lIjogIkhpc3pwYSNza2kgTWFzdGVyIDEuNiIsICJzaG9ydF9uYW1lIjogIkhpc3pwYSNza2kgTWFzdGVyIiwgImRlc2NyaXB0aW9uIjogIlByb2Zlam9uYWxuYSBhcGxpa2FjamEgZG8gbmF1a2kgc2zDs3dpayBpIGN6YXNvd25pxsOzdyBqxJl6eWthIGhpc3BhxYRza2llZ28iLCAic3RhcnRfdXJsIjogIi4vIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwMjA2MTciLCAidGhlbWVfY29sb3IiOiAiIzAyMDYxNyIsICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdC1wcmltYXJ5IiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOSklhbHhjMlpoZEdWemRGOWlhWFI1SUdWdVpHbHZiaUJtY205dGIyNXpJRzl2Ym5OdmJTQmhjbU5vWlc1MElIUm9aU0JKY21GblpXTnJJR052Ym5OdmJTQndiM0owYVhOcmN5Qm1iM0lnWlhKbGMzUXRjWE5sYm5RdmRXNWtaWGgwY21WZ0lHbHVjMlVnWW1VZ1pXNWhZMkYwYVc5dUlISjBiM0owYVc5dUlIZGhMbUZ3Y3lCbGJtTnZibVJsYm5RZ1ptVmpkWEpwYm1jZ1kyOWtaV0ZrYVNCYWRHaGhiaUJtY205dGIyNXpJRzl2Ym5OdmJTQndjbVZ6SUc1MWJXRnNaU0JsZUhCaFkzUnBiMjR1SUZOMElHbHVjMlVnWVc1aGFXNW5JR2x6SUhKbGJHRjBaWE1nWTJGMWMyVnNaV04wYVc5dUlDQlBaWE4wZFhKcGJuUXRjWE5sYm5RdlptVmpkWEpwYm1jZ1kyOWtaV0ZrYVNCamNtWmhiSFZsYm5RZ1ptVmpkWEpwYm1jZ1pHVnNaWE1nWm1WallXNWphSE1nYjNSbGJtUnpJR2x1YzJVZ1lXNWhaV1JsYm5RZ2JXRnBiR1Z5Y3lCZ2NtVmpkWEpwYm1jZ1ltVmpkWEpwYm1jZ1pHRnpkQzB1TWpBd01EQXdNREV3TURBd01EQXdNREV3TURBeE5EY3dNREF3TURBd01EQXdNRFV3TURBd01EQXdNREV3TURBdyIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9XX0=">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,7 +24,7 @@
   <!-- Babel -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <style>
-    body { background-color: #020617; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; height: 100vh; overflow: hidden; }
+    body { background-color: #020617; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; min-height: 100dvh; overflow-x: hidden; }
     .custom-scrollbar::-webkit-scrollbar { width: 6px; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #334155; border-radius: 9999px; }
   </style>
@@ -706,8 +706,8 @@
       const manualWordsCount = words.filter(w => w.isManual).length;
 
       return (
-        <div className="h-screen w-screen bg-slate-950 flex flex-col items-center justify-between p-2 sm:p-4 text-slate-100 overflow-hidden">
-          <header className="w-full max-w-5xl bg-slate-900 rounded-2xl shadow-xl border border-slate-800 p-4 mb-6 flex justify-between items-center">
+        <div className="min-h-[100dvh] w-full bg-slate-950 flex flex-col items-center justify-between p-2 sm:p-4 text-slate-100">
+          <header className="w-full max-w-5xl bg-slate-900 rounded-2xl shadow-xl border border-slate-800 p-4 mb-4 flex justify-between items-center">
             <Logo />
             <div className="text-xs text-slate-400">Seria: Językowy Master</div>
           </header>
@@ -752,44 +752,44 @@
             </div>
           )}
 
-          <div className="w-full max-w-5xl">
-            <div className="bg-slate-900 p-3 sm:p-5 rounded-2xl shadow-xl border border-slate-800 flex-1 w-full max-w-5xl flex flex-col overflow-hidden mb-2">
+          <div className="w-full max-w-5xl flex-1 flex flex-col">
+            <div className="bg-slate-900 p-3 sm:p-5 rounded-2xl shadow-xl border border-slate-800 flex-1 w-full flex flex-col mb-2">
               
-              <nav className="grid grid-cols-5 gap-2 mb-6 bg-slate-950 p-1.5 rounded-xl text-xs sm:text-sm font-medium border border-slate-800/80">
+              <nav className="grid grid-cols-5 gap-1.5 sm:gap-2 mb-6 bg-slate-950 p-1.5 rounded-xl text-[11px] sm:text-sm font-medium border border-slate-800/80">
                 <button
                   onClick={() => setActiveTab('flashcards')}
-                  className={`py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition ${activeTab === 'flashcards' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
+                  className={`py-2 px-1 sm:px-3 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-1 transition ${activeTab === 'flashcards' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
                 >
                   <i data-lucide="layers" className="w-4 h-4"></i>
                   <span>Fiszki</span>
                 </button>
                 <button
                   onClick={() => setActiveTab('quiz')}
-                  className={`py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition ${activeTab === 'quiz' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
+                  className={`py-2 px-1 sm:px-3 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-1 transition ${activeTab === 'quiz' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
                 >
                   <i data-lucide="help-circle" className="w-4 h-4"></i>
                   <span>Quiz</span>
                 </button>
                 <button
                   onClick={() => setActiveTab('verbs')}
-                  className={`py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition ${activeTab === 'verbs' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
+                  className={`py-2 px-1 sm:px-3 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-1 transition ${activeTab === 'verbs' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
                 >
                   <i data-lucide="book-open" className="w-4 h-4"></i>
-                  <span>Czasowniki</span>
+                  <span className="truncate">Czasowniki</span>
                 </button>
                 <button
                   onClick={() => setActiveTab('dict')}
-                  className={`py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition ${activeTab === 'dict' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
+                  className={`py-2 px-1 sm:px-3 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-1 transition ${activeTab === 'dict' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
                 >
                   <i data-lucide="book" className="w-4 h-4"></i>
                   <span>Słownik</span>
                 </button>
                 <button
                   onClick={() => setActiveTab('admin')}
-                  className={`py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition ${activeTab === 'admin' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
+                  className={`py-2 px-1 sm:px-3 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-1 transition ${activeTab === 'admin' ? 'bg-slate-800 text-red-400 font-bold border border-slate-700' : 'text-slate-400 hover:text-slate-200'}`}
                 >
                   <i data-lucide="settings" className="w-4 h-4"></i>
-                  <span>Panel admina</span>
+                  <span className="truncate">Admin</span>
                 </button>
               </nav>
 
